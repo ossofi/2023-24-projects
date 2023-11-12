@@ -4,6 +4,8 @@ dist
 .DS_Store
 reports
 /reports
+junit.xml
+xunit.xml
 
 # IDE related files
 .idea
