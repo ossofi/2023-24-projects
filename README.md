@@ -56,7 +56,7 @@ you can get your public key by run in terminal `cat ~/.ssh/id_rsa.pub`
 ### Enroll into JS/TS Course
 
 - On Autocode click on Explore button in black navigation bar in the top panel
-- Find and click `[EHU] JS/TS Course` (here's [a direct link](https://autocode-next.lab.epam.com/courses/1541))
+- Find and click `[EHU] JS/TS HR 2023` (here's [a direct link](https://autocode-next.lab.epam.com/courses/1541))
 - On top right corner click on blue button `Enroll`
 - Inform your teacher to approve your enrollment
 - After your teacher's done, refresh the page
@@ -64,7 +64,7 @@ you can get your public key by run in terminal `cat ~/.ssh/id_rsa.pub`
 
 ### Cloning tasks repository into your Gitlab account
 
-- Navigate to [[EHU] JS/TS Course](https://autocode-next.lab.epam.com/courses/1541)
+- Navigate to [[EHU] JS/TS HR 2023](https://autocode-next.lab.epam.com/courses/1541)
 - Open `Syllabus` tab
 - Open desired module (i.e `01 Environment setup`, `04 Function`, etc)
 - Open desired task (i.e `Environment Setup`)
@@ -228,7 +228,7 @@ For example, let's assume there are some updated in `upstream/tasks-02-simple-ta
 
 ## How to submit solution to Autocode
 
-- Navigate to [[EHU] JS/TS Course](https://autocode-next.lab.epam.com/courses/1541)
+- Navigate to [[EHU] JS/TS HR 2023](https://autocode-next.lab.epam.com/courses/1541)
 - Open `Syllabus` tab
 - Open desired module (i.e `01 Environment setup`, `04 Function`, etc)
 - Open desired task (i.e `Environment Setup`)
