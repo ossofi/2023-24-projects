@@ -1,0 +1,14 @@
+[
+  {
+    "fnArguments": [["World"]],
+    "expected": "Hello, World!"
+  },
+  {
+    "fnArguments": [["EPAM"]],
+    "expected": "Hello, EPAM!"
+  },
+  {
+    "fnArguments": [["EHU"]],
+    "expected": "Hello, EHU!"
+  }
+]
