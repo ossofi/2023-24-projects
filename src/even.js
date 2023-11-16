@@ -4,5 +4,5 @@
  * @returns {string}
  */
 module.exports.even = function even(num) {
-  throw new Error('not implemented');
+  return num % 2 === 0 ? 'EVEN' : 'ODD';
 };
