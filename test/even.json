@@ -1,0 +1,14 @@
+[
+  {
+    "fnArguments": [[4]],
+    "expected": "EVEN"
+  },
+  {
+    "fnArguments": [[76]],
+    "expected": "EVEN"
+  },
+  {
+    "fnArguments": [[9]],
+    "expected": "ODD"
+  }
+]
