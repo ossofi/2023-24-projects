@@ -5,5 +5,13 @@
  * @returns {number}
  */
 module.exports.sumInRange = function sumInRange(start, end) {
-  throw new Error('Not implemented');
+  let num;
+  if (start > end) {
+    num = start - end + 1;
+  } else {
+    num = end - start + 1;
+  }
+  let sum = (num / 2) * (start + end);
+
+  return sum;
 };

@@ -4,5 +4,16 @@
  * @returns {number}
  */
 module.exports.digitsSum = function digitsSum(n) {
-  throw new Error('Not implemented'); // remove this line
+  let n2 = n * -1;
+  if (n >= 0) {
+    return n
+      .toString()
+      .split('')
+      .reduce((sum, digit) => sum + parseInt(digit), 0);
+  } else {
+    return n2
+      .toString()
+      .split('')
+      .reduce((sum, digit) => sum + parseInt(digit), 0);
+  }
 };
