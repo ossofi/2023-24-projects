@@ -5,6 +5,8 @@
  * @returns {number}
  */
 module.exports.sumInRange = function sumInRange(start, end) {
+  start = Number(start);
+  end = Number(end);
   let num;
   if (start > end) {
     num = start - end + 1;
