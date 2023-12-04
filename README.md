@@ -1,232 +1,149 @@
-# How to setup environment for EPAM EHU Tasks
+# Tasks: 03 Objects and Arrays
 
-Hey there! That's a repository related to JS/TS Course in EHU. Please carefully read all the instructions below.
+## Task description
 
-**Happy coding :innocent:**
+Here are several small tasks. Each of them is located in their own js files.
 
-## Installation
+### getDistance.js
 
-### Git
-
-Please install Git on your local machine https://git-scm.com/download
-
-Verify it's done:
-- In console type `git --version`
-- If you see smth like `git version 2.29.2.windows.2` you're done
-
-### NVM
-
-**NVM is a tool allowing you to have multiple Node.js & NPM versions installed on your machine. We're highly recommend using that.**
-
-1. Clean-up all previous Node.js and NPM installations
-2. Download and install NVM
-   1. Windows: https://github.com/coreybutler/nvm-windows/releases/download/1.1.9/nvm-setup.exe, download and execute
-   2. MacOS:
-    - open terminal Applications -> Utilites -> Terminal.app
-    - run command `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
-    - reboot terminal and try to type `nvm -v`
-    - in case there is nvm: command not found run follow code
-     ` export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"`
-    - try to run `nvm -v` once again
-    tutorial: https://github.com/nvm-sh/nvm
-   3. Linux https://github.com/nvm-sh/nvm
-3. In console run `nvm install 16.17.0` to install Node.js 16.17.0 (NPM included)
-4. In console run `nvm use 16.17.0` to active Nodej.s 16.17.0 as current Node.js version
-5. In console run `nvm current` to verify Node.js 16.17.0 is current activated version. If you see `v16.17.0` in console, then you're fine
-6. In console run `node --version` to print current Node.js version. If you see `v16.17.0` in console, then you're fine
-
-### Configuring SSH
-
-We're highly recommend to configure SSH key for your machine (Windows/MacOS/Linux/etc) and put it into your Gitlab account.
-
-Follow this instruction to complete that step: https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-configure-GitLab-SSH-keys-for-secure-Git-connections
-
-#### MacOs tips
-you can get your public key by run in terminal `cat ~/.ssh/id_rsa.pub`
-
-### Authenticate into Autocode
+Calculate the distance between two points represented on the standard Planar coordinate system
+* with precision 2 decimal places
+* Each Point represented by object contains two property (X and Y)
 
-[Autocode](https://autocode-next.lab.epam.com/) is an educational platform that hosts practice-oriented programming courses and provides an automated way to grade coding assignments. Each student's solution submitted to Autocode from a remote Git repository receives fast feedback from industry-recognized test execution and static code analysis tools. The platform allows students not only to strengthen their coding skills but also get familiar with modern production build tools and version control systems.
-
-- **Please register and login into Autocode using your Gitlab authorisation (your Gitlab account created here https://autocode.git.epam.com/ and bind to your Student EHU GMAIL account)** 
-- On Autocode please click on your name in top right corner ---> select Profile ---> Click on Autorize button near autocode.git.epam.com section to link your gitlab account to your profile
-- If blue Authorize button is now red with Deauthorize label - you're done
-
-### Enroll into JS/TS Course
+#### Test cases
 
-- On Autocode click on Explore button in black navigation bar in the top panel
-- For HR students: Find and click `[EHU] JS/TS HR 2023` (here's [a direct link](https://autocode-next.lab.epam.com/courses/1541))
-- For LR students: Find and click `[EHU] JS/TS LR 2023` (here's [a direct link](https://autocode-next.lab.epam.com/courses/1544))
-- On top right corner click on blue button `Enroll`
-- Inform your teacher to approve your enrollment
-- After your teacher's done, refresh the page
-- If you see `My enrollment` bold label, `Included` status with a blue bullet and `Leave course` red button in the top right corner, then you're done
+| Input | Expected Output | Explanation |
+| --- | --- | --- |
+| `getDistance({ "X": 1, "Y": 1 }, { "X": 2, "Y": 2 })` | `1.41` |
+| `getDistance({ "X": 10, "Y": 10 }, { "X": 20, "Y": 20 })` | `14.14` | [point point length](https://ru.onlinemschool.com/math/library/analytic_geometry/point_point_length/) |
 
-### Cloning tasks repository into your Gitlab account
+### getMaximalSequence.js
 
-- For HR students: Navigate to [[EHU] JS/TS HR 2023](https://autocode-next.lab.epam.com/courses/1541)
-- For LR students: Navigate to [[EHU] JS/TS LR 2023](https://autocode-next.lab.epam.com/courses/1544)
-- Open `Syllabus` tab
-- Open desired module (i.e `01 Environment setup`, `04 Function`, etc)
-- Open desired task (i.e `Environment Setup`)
-- **Verify you see: Autorized Gitlab account: your_gitlab_name**. If not, then click on Autorize button
-- Click on Fork repository button
+Write a script that finds the maximal sequence of equal elements in an array. If there are more than one, return the first.
 
-**From now in your Gitlab Account there is a repository called YouNameSurname / Practical Tasks. That your main repostiry for practice. Now please clone into your local machine (the next step below)**
+#### Test cases
 
-### Cloning your repository with tasks into your local machine
+| Input | Expected Output | Explanation |
+| --- | --- | --- |
+| `getMaximalSequence([2, 1, 1, 2, 3, 3, 2, 2, 2, 1])` | `[2, 2, 2]` | From 6th array index to 8th included |
+| `getMaximalSequence([2, 1, 1, 2, 3, 3, 2, 2, 2, 1, 3, 3, 3])` | `[2, 2, 2]` | From 6th array index to 8th included (the first occurrence, the [3, 3, 3] is the second occur. |
 
-1. In Gitlab navigate to your repositories, click on **Practical Tasks** repository and click on blue button `Clone`.
-2. In dropdown find section **Clone with SSH** and copy that url git@autocode.git.epam.com:...git
-3. In console on your machine navigate to any folder you like and paste copied url after git clone: `git clone git@gitlab...js-ts-tasks.git`
-4. Type in yes if console asks you about fingerprint
-5. After cloning is done, in console type in `cd js-ts-tasks` and click Enter
-6. Now you should be in a folder `js-ts-tasks`
-7. In console type in `git config user.name "Name Surname"` where Name is your Name (same as on Gitlab profile) and Surname is your Surname (same as on Gitlab profile). **Your name should be written in English**. **Don't remove " " symbols**
-8. In console type in `git config user.email youremailaddress@student.ehu.lt` where `youremailaddress@student.ehu.lt` is your address you used to register on Gitlab (the same as on Gitlab profile)
-9. In console type in `git config user.name` and click Enter. You should see your name
-10. In console type in `git config user.email` and click Enter. You should see your email address
+### hasProperty.js
 
-### Install JavaScript packages
+Check if an {object} contains property {prop}
 
-After you've cloned repository onto your local machine, you need to install necessary JavaScript packages.
-1. In console navigate to the folder where you cloned you repository to (`cd js-ts-tasks`)
-2. Now you should be in a folder `js-ts-tasks`
-3. In console type in the command `npm install` and click Enter
-4. Wait for packages to be installed
-5. In console type in `dir` on Windows or `ls` on MacOS, click Enter and verify there's a folder named `node_modules` exists
-6. It it's so, you're done
+#### Test cases
 
-### Configuring VSCode IDE
+| Input | Expected Output | Explanation |
+| --- | --- | --- |
+| `hasProperty({ "X": 1, "Y": 1 }, "x")` | `false` | The 'x' property is not inside given object (case sensitive) |
+| `hasProperty({ "X": 10, "property": 10 }, "property")` | `true` | The 'property' is inside given object |
+| `hasProperty({ "X": 0, "Y": 0 }, "nothing")` | `false` | The 'nothing' property is not inside given object |
 
-1. Install ESLint extention `Ctrl/Cmd +Shift + X` then type in search string eslint and select one
-2. Install Prettier extention the same way
-3. Configure IDE for autoformat on file save `Ctrl/Cmd +Shift + P`
-   type in search string - `settings`
-   select Preferences: Open User Settings (JSON)
-   replace with `
-   {
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": {
-            "source.fixAll": true
-        },
-        "editor.formatOnSave": true
-    }
-}`
+### removeItems.js
 
-### Rules for commit
+Write a function which removes from given array items are equal a given value
 
-Please follow these rules to give a proper name to your commits.
+#### Test cases
 
-Commit message common pattern: `{feat|fix}(ESDU-{taskNumber}): {body of a commit message}`
+| Input | Expected Output | Explanation |
+| --- | --- | --- |
+| `removeItems([1, 3, 456, 78, 2, 2, 4], 2)` | [1, 3, 456, 78, 4] | All array's values equal to 2 have been removed |
+| `removeItems([1, 3, 456, 78, 2, 2, 4], "hello")` | [1, 3, 456, 78, 2, 2, 4] | Nothing to remove, there is no 'hello' in the provided array |
 
-If you're adding a new code/solution/etc, please consider that as `feat` - feature. {taskNumber} - that's your module number (01 - for environment setup, 02 - for data types, etc). For example:
-```
-feat(ESDU-02): add data types solution
-feat(ESDU-06): add solution passing half tests
-feat(ESDU-02): add data types final solution
-```
+### partialSum.js
 
-If you're fixin some issue for already pushed code/solution/etc, please consider that as `fix` - a bugfix or just a fix. {taskNumber} - that's your module number (01 - for environment setup, 02 - for data types, etc). For example:
-```
-fix(ESDU-05): fix sum function params naming
-fix(ESDU-11): fix lint issues
-fix(ESDU-07): fix
-```
+Write a function which from the given array creates a new array where each array item defines the sum of elements from 0 index up to i-th index (included)
 
-## Tasks
+Example: given array [0, 1, 2, 3, 4]
 
-We are using different branches for your tasks and instructions
+The correct answer is [0, 1, 3, 6, 10] where:
+* 0 - sum from indexes 0 to 0 (0)
+* 1 - sum from indexes 0 to 1 (0 + 1 = 1)
+* 3 - sum from indexes 0 to 2 (0 + 1 + 2 = 3)
+* 6 - sum from indexes 0 to 3 (0 + 1 + 2 + 3 = 6)
+* 10 - sum from indexes 0 to 4 (0 + 1 + 2 + 3 + 4 = 10)
 
-```
-master - used for general repository instructions
-```
+#### Test cases
 
-Each branch starting with `tasks/...` contains a set of tasks dedicated to the lecture module.
+| Input | Expected Output | Explanation |
+| --- | --- | --- |
+| `partialSum([0, 1, 2, 3, 4])` | [0, 1, 3, 6, 10] |  |
+| `partialSum([0, 1, 0, 2, 0, 3])` | [0, 1, 1, 3, 3, 6] | |
 
-```
-tasks/01-environment-setup
-tasks/02-data-types-values-operators
-...
-```
+### hundredAfterOdd
 
-## How to get new tasks into your repository
+Write a function which inside given array of numbers puts a number `100` after each odd number.
 
-### One-time installation step
+#### Test cases
 
-Please add remote branch linking into your local git
+| Input | Expected Output | Explanation |
+| --- | --- | --- |
+| `hundredAfterOdd([1, 3, 456, 78, 2, 777125, 4])` | [1, 100, 3, 100, 456, 78, 2, 777125, 100, 4] | Odd numbers: 1, 3, 777125 |
+| `hundredAfterOdd([-1, -5, 1, 5])` | [-1, 100, -5, 100, 1, 100, 5, 100] | All number are odd |
 
-#### Console
+### diffElems
 
-To do this, please in console run commands
-```
-git remote rm upstream
+Write a function which inside given array of numbers counts amount of different elements.
 
-git remote add upstream git@autocode.git.epam.com:esde-js-ts/js-ts-tasks.git
-```
+#### Test cases
 
-#### Visual Studio Code
+| Input | Expected Output | Explanation |
+| --- | --- | --- |
+| `diffElems([1, 3, 6, 1, 5, 1, 1])` | 4 | Different numbers are 1, 3, 6, 5 |
+| `diffElems([0, 0, 0, 0])` | 1 | Different number is only 0 |
 
-In Source Control menu click on three dots -> Remote -> Add remote -> Paste git@autocode.git.epam.com:esde-js-ts/js-ts-tasks.git -> Enter upstream
+### maxCommonSub
 
-**NOTE** You might need to remove previously created upstream. In Source Control menu click on three dots -> Remote -> Remove remote -> upstream.
+Write a function which finds a maximal common substring of two given strings.
 
-### How to start solving new tasks (get new branches into your Git)
+#### Test cases
 
-#### Console
-
-When the linking is created (see instructions above), run command `git fetch upstream` to get a new branch with tasks.
-
-Type `git branch -a` to ensure you see in a list lines like `remotes/upstream/tasks-...`.
-
-Assuming the new branch (with new tasks you haven't solved yet) is `tasks-02-simple-tasks`.
-
-Type `git switch tasks-02-simple-tasks`. If you see two messages
-
-```
-Branch 'tasks-02-simple-tasks' set up to track remote branch 'tasks-02-simple-tasks' from 'upstream'
-Switched to a new branch 'tasks-02-simple-tasks'
-```
-
-Then you did it correctly.
-
-Now the next step is to publish that branch into your Git repositry (origin). Run command `git push -u origin`. You should see a list of messages containing that line:
-
-```
-...
-To gitlab.com:YOUR_NAME/js-ts-tasks.git
-* [new branch]     tasks-02-simple-tasks -> tasks-02-simple-tasks
-...
-```
-
-You're done, now you could write solutions for your task.
-
-#### Visual Studio Code
-
-Now when the linking is created, In Source Control menu click on three dots -> Pull, Push -> Fetch From All Remotes menu item to get a new branch with tasks.
-
-Then checkout/switch to that branch (`upstream/tasks-...`)
-
-Now you could create your solution locally.
-
-To prepare for Autocode submit please push your local branch into your repository. In Source Control menu click on three dots -> Pull, Push -> Push to... -> Select **origin  (not upstream)**
-
-### How to get tasks updates
-
-#### Console
-
-Sometimes there are improvements in already published tasks. To get new changes from upstream repository you should use `git pull` command.
-
-For example, let's assume there are some updated in `upstream/tasks-02-simple-tasks` branch. Run in console `git pull upstream tasks-02-simple-tasks` to pull recent changes from remote branch into your local repository.
+| Input | Expected Output | Explanation |
+| --- | --- | --- |
+| `maxCommonSub('abcd', 'bcg')` | 'bc' | 'bc' string is a substring for both strings and its length is maximal ('b' and 'c' and also substrings but their lengths is 1) |
+| `maxCommonSub('qweeetyiyiyi', 'vmeetyop')` | 'eety' |  |
 
 ## How to run tasks locally
 
-1. Switch to the tasks branch you would like to solve
-2. Ensure there's a `node_modules` folder (all packages are installed)
-3. In console run `npm run test:local` command to test your solution
-4. In console you will see results of your solution
+The following commands are useful to run your code locally
+
+### Run all tasks at once
+
+`npm run test:local` - iterates throught all `src/*.js` files and test your solutions
+
+### Run a certain task
+
+You could specify a name of each individual task to run that locally
+
+`npm run test:local:backToFront` - run test cases only for `backToFront` task
+`npm run test:local:sum` - run test cases only for `sum` task
+
+A list of available commands is specified in `package.json` file in `scripts` section
+
+## Commit message rules
+
+Please follow `Commit message rules` instructions provided on `main` branch.
+
+## How to submit solution to Autocode
+
+[Autocode](https://autocode-next.lab.epam.com/) is an educational platform that hosts practice-oriented programming courses and provides an automated way to grade coding assignments. Each student's solution submitted to Autocode from a remote Git repository receives fast feedback from industry-recognized test execution and static code analysis tools. The platform allows students not only to strengthen their coding skills but also get familiar with modern production build tools and version control systems.
+
+### Authenticate into Autocode
+
+- **Please register and login into Autocode using your Gitlab authorisation (your Gitab account)**
+- On Autocode please click on your name in top right corner ---> select Profile ---> Click on Autorize button near gitlab.com section to link your gitlab account to your profile
+- If blue Authorize button is now red with Deauthorize label - you're done
+
+### Enroll into JS/TS Course if it's not done yet
+
+- On Autocode click on Explore button in black navigation bar in the top panel
+- For HR Students: Find and click [[EHU] JS/TS HR 2023](https://autocode-next.lab.epam.com/courses/1541)
+- For LR Students: Find and click [[EHU] JS/TS HR 2023](https://autocode-next.lab.epam.com/courses/1544)
+- On top right corner click on blue button `Enroll`
+- Inform your trainer (Andrei/Aliaksandr) to approve your enrollment
+- After they're done, refresh the page
+- If you see `My enrollment` bold label, `Included` status with a blue bullet and `Leave course` red button in the top right corner, then you're done
 
 ## How to submit solution to Autocode
 
