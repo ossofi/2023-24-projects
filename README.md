@@ -51,7 +51,7 @@ createUsersSortFn = function (TestUtils) { }
 
 ##### celebrate
 
-A function that in the provided Array of Users for every User under odd index in Array celebrates his birthday
+A function that in the provided Array of Users for every User under even index in Array celebrates his birthday
 
 ```js
 celebrate = function (users) { }

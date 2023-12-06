@@ -42,7 +42,7 @@ describe('User class', () => {
     const { firstName, secondName, age } = TEST_USER_DATA;
     const user = new User(firstName, secondName, age);
 
-    assert.isUndefined(user.firstName);
+    assert.isDefined(user.firstName);
     assert.equal(user.name, `${firstName} ${secondName}`);
 
     const newName = genRandStr();

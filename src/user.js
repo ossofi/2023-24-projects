@@ -48,7 +48,7 @@ module.exports.createUsersSortFn = function (TestUtils) {
 };
 
 /**
- * In Array of Users every User under odd index in Array should celebrate his birthday
+ * In Array of Users every User under even index in Array should celebrate his birthday
  * @param {Array<User>} users
  * @return {Array<User>}
  */
