@@ -4,5 +4,13 @@
  * @returns {number}
  */
 module.exports.diffElems = function diffElems(arr) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  const allElems = arr;
+  const uniqueElem = [];
+  for (let i = 0; i < allElems.length; i++) {
+    if (!uniqueElem.includes(arr[i])) {
+      uniqueElem.push(arr[i]);
+    }
+  }
+  const numOfUniqueElem = uniqueElem.length;
+  return numOfUniqueElem;
 };
