@@ -5,6 +5,5 @@
  * @returns {boolean}
  */
 module.exports.hasProperty = function hasProperty(object, prop) {
-  const res = object.hasOwnProperty(prop);
-  return res;
+  return prop in object;
 };

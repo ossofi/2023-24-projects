@@ -8,7 +8,7 @@ module.exports.getMaximalSequence = function getMaximalSequence(arr) {
   let currSeq = [];
 
   for (let i = 0; i < arr.length; i++) {
-    if (i === 0 || arr[i] === arr[i - 1]) {
+    if (currSeq.length === 0 || arr[i] === currSeq[0]) {
       currSeq.push(arr[i]);
     } else {
       if (currSeq.length > maxSeq.length) {
