@@ -13,5 +13,8 @@
  * @returns {function}
  */
 module.exports.palindrome = function palindrome(TestUtils) {
-  throw new Error('Not implemented'); // remove this line and create your solution
+  return function (context) {
+    const editedStr = context.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return TestUtils.isPalindrome.call({ str: editedStr });
+  };
 };
