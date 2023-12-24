@@ -14,17 +14,8 @@
  * @returns {function}
  */
 module.exports.censorship = function censorship(forbidden) {
+  const regex = new RegExp(forbidden.join('|'), 'gi');
   return function (str) {
-    for (let i = 0; i < str.length; i++) {
-      for (let j = 0; j < forbidden.length; j++) {
-        let word = forbidden[j];
-        let num = word.length;
-        let star = '*'.repeat(num);
-        if (str.includes(word)) {
-          str = str.replace(word, star);
-        }
-      }
-    }
-    return str;
+    return str.replace(regex, match => '*'.repeat(match.length));
   };
 };
