@@ -4,5 +4,5 @@
  * @returns Promise
  */
 module.exports.all = function all(promisesArray) {
-  throw new Error('Not implemented'); // remove me and write your code
+  return Promise.all(promisesArray);
 };
